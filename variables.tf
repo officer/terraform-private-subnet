@@ -1,32 +1,36 @@
+# Required Attributes
 variable "vpc_id" {
-  description = "VPC ID"
-  type = "string"
+  description   = "(Required) VPC ID"
+  type          = "string"
 }
 
 variable "cidr_block" {
-  description = "VPC CIDR block"
-  type = "string"
+  description   = "(Required) VPC CIDR block"
+  type          = "string"
 }
 
 
 variable "availability_zones" {
-    description = "Availability zones"
-    type = "list"
+  description   = "(Required) Availability zones"
+  type          = "list"
 }
 
+# Optional attributes
 variable "nat_gateway_enabled" {
-  description = "Use NAT Gateway or not"
-  type = "string"
-  default = "false"
+  description   = "(Optional) Whether use NAT Gateway or not"
+  type          = "string"
+  default       = "false"
 }
 
 variable "nat_gateway_id" {
-  description = "NAT Gateway ID"
-  type = "string"
+  description   = "(Optional) NAT Gateway ID. Required if nat_gateway_enabled is true"
+  type          = "string"
+  default       = "none"
 }
 
 
 variable "tags" {
-  description = "tags"
-  type = "map"
+  description   = "(Optional) tags"
+  type          = "map"
+  default       = {}
 }
